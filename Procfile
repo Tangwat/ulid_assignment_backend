@@ -1,1 +1,1 @@
-web: java -cp target/classes/:target/dependency/* com.upperlink.ulidappportal.UlidappportalApplication
+web: java -jar target/ulidappportalbackend-0.0.1-SNAPSHOT.jar
