@@ -28,19 +28,16 @@ public class ApplicantServiceImpl implements ApplicantService {
 
     @Override
     public Applicant createApplicant(ApplicantDto applicantDto) throws AlreadyExistException {
-        Optional <Applicant> applicant = applicantRepository.findByAin(applicantDto.getAin());
+//        Optional <Applicant> applicant = applicantRepository.findByAin(applicantDto.getAin());
         if(applicantRepository.count() == 4){
             throw new IllegalStateException("Application closed");
         }
-        if (!applicant.isPresent()){
-            Applicant applicant1 = new Applicant(applicantDto.getAin(), applicantDto.getFirstName(),
-                    applicantDto.getSurName(), applicantDto.getPhoneNumber(), applicantDto.getEmail(),
-                    applicantDto.getCoverLetter(), applicantDto.isStatus(), applicantDto.getImage(),
-                    applicantDto.getResume());
-            return applicantRepository.save(applicant1);
-        }else {
-            throw new AlreadyExistException("Applicant Already Exist");
-        }
+        Applicant applicant1 = new Applicant(applicantDto.getAin(), applicantDto.getFirstName(),
+                applicantDto.getSurName(), applicantDto.getPhoneNumber(), applicantDto.getEmail(),
+                applicantDto.getCoverLetter(), applicantDto.isStatus(), applicantDto.getImage(),
+                applicantDto.getResume());
+        return applicantRepository.save(applicant1);
+
     }
 
     @Override

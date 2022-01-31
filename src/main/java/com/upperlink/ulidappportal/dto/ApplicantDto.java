@@ -7,10 +7,8 @@ import javax.validation.constraints.NotBlank;
 @Data
 public class ApplicantDto {
 
-    @NotBlank
     private Long applicantId;
 
-    @NotBlank
     private String ain;
 
     @NotBlank

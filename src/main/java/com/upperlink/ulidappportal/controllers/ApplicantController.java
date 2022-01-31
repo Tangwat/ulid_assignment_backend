@@ -29,7 +29,7 @@ public class ApplicantController {
     @PostMapping("/applicants")
     public Applicant createApplicant(@Valid @RequestBody ApplicantDto applicantDto) throws Exception {
         Applicant applicant;
-            applicant =applicantService.createApplicant(applicantDto);
+            applicant = applicantService.createApplicant(applicantDto);
             return applicant;
 
     }
